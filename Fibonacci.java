@@ -9,7 +9,7 @@ import java.util.Calendar;
  * of dynamic programming.
  */
 
-public class Main {
+public class Fibonacci {
 
     private static int[] buffer = new int[5000000]; //5 million is pretty big
 
