@@ -1,17 +1,21 @@
 import java.util.Calendar;
 
-
 /**
  * Program Author: Nathan Marder
  *
  * This is a really simple little java program
- * which is meant to demonstrate the awesomeness
- * of dynamic programming.
+ * which is meant to demonstrate the awesomeness.
+ * A recursive fibonacci method works fantastic,
+ * but it also includes many redundant calculations.
+ *
+ * Adding some dynamic programming removes these
+ * redundancies, providing a dramatically quicker
+ * algorithm.
+ * 
  */
-
 public class Fibonacci {
 
-    private static int[] buffer = new int[5000000]; //5 million is pretty big
+    private static int[] buffer = new int[5000000]; // buffer for dynamic method (line 47)
 
     public static void main(String[] args) {
         long startTime,result,endTime;
@@ -30,29 +34,26 @@ public class Fibonacci {
     }
 
 
-
     // without dynamic programming
     private static int slowFib(int n){
 
         if (n==0) return 0;
         if (n==1) return 1;
 
-        return (slowFib(n - 1) + slowFib(n-2));
+        return slowFib(n - 1) + slowFib(n-2);
     }
-
 
     // with dynamic programming
     private static int fastFib(int n){
 
         // empty int buffers have values all initialized to zero
-        if (buffer[n] != 0){  return buffer[n];   }
+        if (buffer[n] != 0) return buffer[n];
 
         // base cases
-        if (n==0) {  return buffer[0] = 0; }
-        if (n==1) {  return buffer[1] = 1; }
+        if (n == 0) return buffer[0] = 0;
+        if (n == 1) return buffer[1] = 1;
 
-        // recursive call
+        // place value into buffer & recurse
         return buffer[n] = fastFib(n-1) + fastFib(n-2);
-
     }
 }
