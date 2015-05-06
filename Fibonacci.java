@@ -3,14 +3,11 @@ import java.util.Calendar;
 /**
  * Program Author: Nathan Marder
  *
- * This is a really simple little java program
- * which is meant to demonstrate the awesomeness.
  * A recursive fibonacci method works fantastic,
  * but it also includes many redundant calculations.
- *
  * Adding some dynamic programming removes these
- * redundancies, providing a dramatically quicker
- * algorithm.
+ * redundant calculations, providing a dramatically 
+ * quicker algorithm. See for yourself.
  * 
  */
 public class Fibonacci {
