@@ -43,7 +43,7 @@ public class Fibonacci {
     // with dynamic programming
     private static int fastFib(int n){
 
-        // empty int buffers have values all initialized to zero
+        // do each calculation once and only once
         if (buffer[n] != 0) return buffer[n];
 
         // base cases
